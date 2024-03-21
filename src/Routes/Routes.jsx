@@ -6,6 +6,7 @@ import Favourites from './../Pages/Favourites/Favourites';
 import Login from './../Pages/Login/Login';
 import Register from './../Pages/Register/Register';
 import Phone from './../Pages/Phone/Phone';
+import PrivateRoute from './../Pages/PrivateRoute/PrivateRoute';
 const router = createBrowserRouter([
     {
       path: "/",
@@ -30,7 +31,7 @@ const router = createBrowserRouter([
         },
         {
             path:'/phones/:id',
-            element:<Phone></Phone>,
+            element:<PrivateRoute><Phone></Phone></PrivateRoute>,
             loader:()=>fetch('/phones.json')
         }
       ]
